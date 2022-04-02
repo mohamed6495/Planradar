@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white"
+  android:orientation="vertical"
+  android:paddingBottom="@dimen/_100sdp"
+  >
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    >
+
+    <ImageView
+        android:id="@+id/imgAddNewCity"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:contentDescription="@null"
+      android:padding="@dimen/_12sdp"
+      android:src="@drawable/search_24px"
+      />
+
+    <EditText
+      android:id="@+id/etAddNewCity"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white"
+      android:fontFamily="@font/roboto_bold"
+      android:hint="@string/add_new_city"
+      android:importantForAutofill="no"
+      android:inputType="text"
+      android:textColorHint="@color/black"
+      />
+
+  </LinearLayout>
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_1sdp"
+    android:background="@color/colorGrayDivider"
+    />
+
+  <include
+    android:id="@+id/layoutProgress"
+    layout="@layout/layout_progress"
+    />
+
+</LinearLayout>

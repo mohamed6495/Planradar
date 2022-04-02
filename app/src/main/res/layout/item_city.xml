@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/layoutCity"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:gravity="center"
+  android:orientation="horizontal"
+  android:padding="@dimen/_12sdp"
+  >
+
+  <ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@null"
+    android:src="@drawable/location_city_24px"
+    />
+
+  <TextView
+    android:id="@+id/tvCityName"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_16sdp"
+    android:layout_marginEnd="@dimen/_16sdp"
+    android:layout_weight="1"
+    android:fontFamily="@font/roboto_bold"
+    android:textColor="@color/black"
+    android:textSize="14sp"
+    tools:text="London, UK"
+    />
+
+  <ImageView
+    android:id="@+id/ivHistory"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@null"
+    android:padding="@dimen/_8sdp"
+    android:src="@drawable/info_24px"
+    app:layout_constraintTop_toTopOf="parent"
+    />
+
+</LinearLayout>

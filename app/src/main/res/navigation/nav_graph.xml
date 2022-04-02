@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/HomeFragment">
+
+  <fragment
+    android:id="@+id/HomeFragment"
+    android:name="com.planradar.assessment.ui.showCity.cityFragment"
+    android:label="@string/home_fragment_label"
+    tools:layout="@layout/fragment_home" />
+
+  <fragment
+    android:id="@+id/WeatherDetailsFragment"
+    android:name="com.planradar.assessment.ui.details.WeatherDetailsFragment"
+    android:label="@string/weather_details_fragment_label"
+    tools:layout="@layout/fragment_weather_details">
+    <argument
+      android:name="city"
+      app:argType="com.planradar.assessment.data.model.City"
+      app:nullable="false" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/WeatherHistoryFragment"
+    android:name="com.planradar.assessment.ui.history.WeatherHistoryFragment"
+    android:label="@string/weather_history_fragment_label"
+    tools:layout="@layout/fragment_weather_history">
+    <argument
+      android:name="cityName"
+      app:argType="string"
+      app:nullable="true" />
+  </fragment>
+
+  <dialog
+    android:id="@+id/AddCityBottomSheetDialogFragment"
+      android:name="com.planradar.assessment.ui.addCity.AddCityBottomSheet"
+      android:label="@string/add_city_dialog_label"
+    tools:layout="@layout/sheet_add_city" />
+
+  <action
+    android:id="@+id/action_navigate_to_addCityFragment"
+    app:destination="@+id/AddCityBottomSheetDialogFragment" />
+
+  <action
+    android:id="@+id/action_navigate_to_weatherDetailsFragment"
+    app:destination="@+id/WeatherDetailsFragment" />
+
+  <action
+    android:id="@+id/action_navigate_to_weatherHistoryFragment"
+    app:destination="@+id/WeatherHistoryFragment" />
+</navigation>

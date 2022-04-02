@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  >
+
+  <LinearLayout
+    android:id="@+id/layoutToolBar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_120sdp"
+    android:background="@color/primary_color"
+    android:elevation="@dimen/_24sdp"
+    android:gravity="bottom"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    >
+
+    <ImageView
+      android:id="@+id/ivBack"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="top"
+      android:contentDescription="@null"
+      android:src="@drawable/arrow_back_24px"
+      />
+
+    <TextView
+      android:id="@+id/tvCityName"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      android:layout_marginBottom="@dimen/_10sdp"
+      android:fontFamily="@font/roboto_regular"
+      android:text="@string/city_name_history"
+      android:textColor="@color/white"
+      android:textSize="24sp"
+      />
+
+  </LinearLayout>
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="@drawable/gradient_background"
+    app:layout_constraintTop_toBottomOf="@+id/layoutToolBar"
+    >
+
+    <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      android:contentDescription="@null"
+      android:scaleType="centerCrop"
+      android:src="@drawable/group"
+      />
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/rvHistory"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layoutManager="LinearLayoutManager"
+      tools:itemCount="5"
+      tools:listitem="@layout/item_weather_history"
+      />
+
+
+    <TextView
+      android:id="@+id/tvNoHistory"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginBottom="@dimen/_10sdp"
+      android:fontFamily="@font/roboto_medium"
+      android:text="@string/error_no_historical_data"
+      android:textSize="24sp"
+      android:visibility="gone"
+      />
+
+    <include
+      android:id="@+id/layoutProgress"
+      layout="@layout/layout_progress"
+      />
+
+  </FrameLayout>
+</LinearLayout>

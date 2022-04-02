@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  >
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+      android:id="@+id/layoutToolBar"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/_120sdp"
+      android:background="@color/primary_color"
+      android:elevation="@dimen/_24sdp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      >
+
+      <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:src="@drawable/arrow_back_24px"
+        />
+
+      <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+      <ImageView
+        android:id="@+id/ivDeleteCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:padding="@dimen/_12sdp"
+        android:src="@drawable/ic_baseline_delete_24"
+        />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:background="@drawable/gradient_background"
+      app:layout_constraintTop_toBottomOf="@+id/layoutToolBar"
+      >
+
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/group"
+        />
+
+    </FrameLayout>
+  </LinearLayout>
+
+  <com.planradar.assessment.utils.views.MagicCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_24sdp"
+    android:layout_marginTop="@dimen/_80sdp"
+    android:layout_marginEnd="@dimen/_24sdp"
+    android:elevation="@dimen/_18sdp"
+    android:padding="@dimen/_18sdp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:mcv_backgroundColor="@color/white"
+    app:mcv_cornerRadius="@dimen/_2sdp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+      <TextView
+        android:id="@+id/tvCityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="London, UK"
+        />
+
+      <ImageView
+        android:id="@+id/ivWeatherIcon"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_54sdp"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCityName"
+        tools:src="@drawable/location_city_24px"
+        />
+
+      <LinearLayout
+        android:id="@+id/layoutDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_54sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivWeatherIcon"
+        >
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:fontFamily="@font/roboto_bold"
+          android:text="@string/description"
+          android:textColor="@color/black"
+          android:textSize="14sp"
+          />
+
+        <TextView
+          android:id="@+id/tvDescription"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:fontFamily="@font/roboto_regular"
+          android:gravity="end"
+          android:textColor="@color/primary_color"
+          android:textSize="20sp"
+          tools:text="Cloudy"
+          />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/layoutTemperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDescription"
+        >
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:fontFamily="@font/roboto_bold"
+          android:text="@string/temperature"
+          android:textColor="@color/black"
+          android:textSize="14sp"
+          />
+
+        <TextView
+          android:id="@+id/tvTemperature"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:fontFamily="@font/roboto_regular"
+          android:gravity="end"
+          android:textColor="@color/primary_color"
+          android:textSize="20sp"
+          tools:text="20° C"
+          />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/layoutHumidity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTemperature"
+        >
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:fontFamily="@font/roboto_bold"
+          android:text="@string/humidity"
+          android:textColor="@color/black"
+          android:textSize="14sp"
+          />
+
+        <TextView
+          android:id="@+id/tvHumidity"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:fontFamily="@font/roboto_regular"
+          android:gravity="end"
+          android:textColor="@color/primary_color"
+          android:textSize="20sp"
+          tools:text="45%"
+          />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/layoutWindspeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHumidity"
+        >
+
+        <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:fontFamily="@font/roboto_bold"
+          android:text="@string/windspeed"
+          android:textColor="@color/black"
+          android:textSize="14sp"
+          />
+
+        <TextView
+          android:id="@+id/tvWindspeed"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:fontFamily="@font/roboto_regular"
+          android:gravity="end"
+          android:textColor="@color/primary_color"
+          android:textSize="20sp"
+          tools:text="45%"
+          />
+
+      </LinearLayout>
+
+      <include
+        android:id="@+id/layoutProgress"
+        layout="@layout/layout_progress"
+        />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </com.planradar.assessment.utils.views.MagicCardView>
+
+  <TextView
+    android:id="@+id/tvLocationDate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_18sdp"
+    android:gravity="center"
+    android:text="@string/weather_location_date"
+    android:textColor="@color/black"
+    android:textSize="12sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
